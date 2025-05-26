@@ -8,12 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="toggle-container">
+    <button id="theme-toggle" title="Toggle Theme">🌗</button>
+  </div>
+
   <header class="header">
-    <div class="hero-text">
-      <h1 class="gradient-text">Chavi Pathak</h1>
-      <p class="subtext">Data-driven insights for impactful decision-making</p>
-      <button id="theme-toggle">🌓 Toggle Theme</button>
-    </div>
+    <h1 class="gradient-text">Chavi Pathak</h1>
+    <p class="subtext">Google Certified | ML Enthusiast | BI Intern</p>
   </header>
 
   <section id="about" class="section">
@@ -26,21 +27,56 @@
   <section id="projects" class="section">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="card">
-        <h3>CDC-Diabetes-Prediction</h3>
-        <p>Predicts diabetes status using R with models like KNN, CART, and Logistic Regression.</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>CDC-Diabetes Prediction</h3>
+            <p>ML prediction using R - KNN, CART, Logistic Regression</p>
+          </div>
+          <div class="flip-card-back">
+            <p>• Data: CDC BRFSS<br/>• Models: KNN, CART, Logistic<br/>• Cutoffs tested: 0.1, 0.3, 0.5</p>
+            <a href="#" class="btn">View GitHub</a>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Rent-Predictor</h3>
-        <p>Uses Gradient Boosting to predict rent based on apartment features and trends.</p>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Rent Predictor</h3>
+            <p>Gradient Boosting Regression with housing data</p>
+          </div>
+          <div class="flip-card-back">
+            <p>• Location, Area, Beds<br/>• Feature Engineering<br/>• Model: XGBoost</p>
+            <a href="#" class="btn">View GitHub</a>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Cardiovascular-Risk-Analysis</h3>
-        <p>Heart disease risk classification using Python ML models like SVM, KNN, Naive Bayes.</p>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Cardiovascular Risk</h3>
+            <p>Heart disease classification in Python</p>
+          </div>
+          <div class="flip-card-back">
+            <p>• SVM, Naive Bayes, KNN<br/>• Exploratory clustering<br/>• ROC, F1, Confusion Matrix</p>
+            <a href="#" class="btn">View GitHub</a>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <h3>Stock-Portfolio-Optimization</h3>
-        <p>SQL ETL + R-based financial analysis for optimized portfolio returns.</p>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h3>Stock Portfolio Optimizer</h3>
+            <p>SQL ETL + R-based return optimization</p>
+          </div>
+          <div class="flip-card-back">
+            <p>• SQL pipeline<br/>• Portfolio theory<br/>• Performance metrics</p>
+            <a href="#" class="btn">View GitHub</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -60,13 +96,26 @@
   </section>
 
   <footer class="footer">
-    <p>&copy; 2025 Chavi Pathak. Built with ❤️ and HTML/CSS.</p>
+    <p>&copy; 2025 Chavi Pathak • Built with raw HTML/CSS/JS 💻</p>
   </footer>
 
   <script>
-    const toggleBtn = document.getElementById("theme-toggle");
-    toggleBtn.addEventListener("click", () => {
+    document.getElementById("theme-toggle").addEventListener("click", () => {
       document.body.classList.toggle("dark-theme");
+    });
+
+    // Scroll animation
+    const sections = document.querySelectorAll(".section");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach((section) => {
+      observer.observe(section);
     });
   </script>
 </body>
