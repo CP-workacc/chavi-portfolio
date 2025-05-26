@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chavi Pathak | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="hero-text">
+      <h1 class="gradient-text">Chavi Pathak</h1>
+      <p class="subtext">Data-driven insights for impactful decision-making</p>
+      <button id="theme-toggle">🌓 Toggle Theme</button>
+    </div>
+  </header>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      I'm a data-driven problem solver with experience in data science, automation, and machine learning. Currently completing my MS in Information Systems, I’ve worked as a Data Science Intern at Springer Capital and am certified by Google in Data Analytics. My expertise spans SQL, Python, ML, and BI tools — and I’m passionate about building scalable solutions that drive product and business impact.
+    </p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="card">
+        <h3>CDC-Diabetes-Prediction</h3>
+        <p>Predicts diabetes status using R with models like KNN, CART, and Logistic Regression.</p>
+      </div>
+      <div class="card">
+        <h3>Rent-Predictor</h3>
+        <p>Uses Gradient Boosting to predict rent based on apartment features and trends.</p>
+      </div>
+      <div class="card">
+        <h3>Cardiovascular-Risk-Analysis</h3>
+        <p>Heart disease risk classification using Python ML models like SVM, KNN, Naive Bayes.</p>
+      </div>
+      <div class="card">
+        <h3>Stock-Portfolio-Optimization</h3>
+        <p>SQL ETL + R-based financial analysis for optimized portfolio returns.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span>Python</span><span>SQL</span><span>R</span><span>Java</span>
+      <span>Power BI</span><span>Tableau</span><span>Redshift</span><span>AWS</span>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:chaviar10@gmail.com">chaviar10@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/chavi-pathak-53642b1a9/" target="_blank">chavi-pathak</a></p>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Chavi Pathak. Built with ❤️ and HTML/CSS.</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+    });
+  </script>
+</body>
+</html>

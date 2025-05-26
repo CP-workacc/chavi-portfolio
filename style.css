@@ -1,0 +1,170 @@
+/* General Reset and Theme Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 2rem;
+}
+
+.dark-theme {
+  background-color: #1f1f1f;
+  color: #f4f4f4;
+}
+
+/* Header Section */
+.header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-text {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeSlideUp 1.5s ease-out;
+}
+
+.subtext {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  opacity: 0.9;
+  animation: fadeSlideUp 2s ease-out;
+}
+
+#theme-toggle {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.2rem;
+  background: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme #theme-toggle {
+  background: #333;
+  color: #fff;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 1.5rem;
+  max-width: 900px;
+  margin: auto;
+  animation: fadeIn 1.2s ease-in;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #ff7e5f;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.dark-theme .card {
+  background: #2b2b2b;
+}
+
+/* Skills */
+.skills span {
+  display: inline-block;
+  background: #eee;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.dark-theme .skills span {
+  background: #444;
+  color: #fff;
+}
+
+/* Contact */
+#contact a {
+  color: #667eea;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.dark-theme #contact a {
+  color: #ffb347;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 1rem 1rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .gradient-text {
+    font-size: 2.2rem;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+  }
+  #theme-toggle {
+    font-size: 0.9rem;
+  }
+}
