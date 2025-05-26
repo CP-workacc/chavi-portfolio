@@ -1,4 +1,4 @@
-/* General Reset and Theme Base */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -8,41 +8,15 @@
 }
 
 body {
-  background-color: #f2f2f2;
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8ecf7 100%);
   color: #222;
-  line-height: 1.6;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .dark-theme {
-  background-color: #1e1e1e;
-  color: #f2f2f2;
-}
-
-/* Header Section */
-.header {
-  background: linear-gradient(135deg, #6e8efb, #a777e3);
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.gradient-text {
-  font-size: 3.2rem;
-  font-weight: 800;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeSlideUp 1.2s ease-out forwards;
-}
-
-.subtext {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  opacity: 0.9;
-  animation: fadeSlideUp 2s ease-out forwards;
+  background: linear-gradient(135deg, #000 0%, #1e1e1e 100%);
+  color: #eee;
 }
 
 /* Theme Toggle */
@@ -58,50 +32,70 @@ body {
   border-radius: 30px;
   border: none;
   background: #ffffff;
-  color: #333;
+  color: #111;
   font-size: 1.2rem;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
   cursor: pointer;
 }
 
 .dark-theme #theme-toggle {
-  background: #2c2c2c;
+  background: #333;
   color: #fff;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+/* Gradient Header */
+.header {
+  background: radial-gradient(circle at center, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 6rem 1rem 4rem;
+  position: relative;
+  clip-path: ellipse(130% 100% at 50% 0%);
+}
+
+.gradient-text {
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeSlideUp 1.2s ease-out forwards;
+}
+
+.subtext {
+  font-size: 1.3rem;
+  margin-top: 0.7rem;
+  animation: fadeSlideUp 2s ease-out forwards;
 }
 
 /* Sections */
 .section {
-  padding: 4rem 1.5rem;
-  max-width: 1000px;
+  padding: 6rem 1.5rem;
+  max-width: 1200px;
   margin: auto;
   opacity: 0;
   transform: translateY(40px);
+  position: relative;
+  z-index: 1;
 }
 
 .visible {
   opacity: 1;
   transform: translateY(0);
-  transition: all 1s ease-in-out;
+  transition: all 1.2s ease-in-out;
 }
 
 .section h2 {
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  position: relative;
+  font-size: 2.6rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(to right, #f2709c, #ff9472);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
-.section h2::after {
-  content: '';
-  width: 100%;
-  height: 3px;
-  background: #ff7e5f;
-  display: block;
-  margin-top: 6px;
-}
-
-/* Flip Cards */
+/* Projects Grid - Flip Cards */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -178,7 +172,7 @@ body {
 /* Skills */
 .skills span {
   display: inline-block;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.1);
   padding: 0.5rem 1rem;
   margin: 0.4rem;
   border-radius: 30px;
@@ -187,8 +181,30 @@ body {
 }
 
 .dark-theme .skills span {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.2);
   color: #fff;
+}
+
+/* Chart Section */
+.chart-container {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  margin-top: 2rem;
+}
+
+.dark-theme .chart-container {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+canvas {
+  width: 100% !important;
+  max-width: 800px;
+  height: auto !important;
+  margin: auto;
+  display: block;
 }
 
 /* Contact */
@@ -207,7 +223,27 @@ body {
   text-align: center;
   padding: 2rem 1rem 1rem;
   font-size: 0.9rem;
-  color: #aaa;
+  color: #777;
+}
+
+/* Floating Orbs */
+body::after {
+  content: '';
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 80%);
+  border-radius: 50%;
+  animation: floatOrb 12s infinite ease-in-out;
+  z-index: 0;
+}
+
+@keyframes floatOrb {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-40px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
 }
 
 /* Animations */
@@ -225,7 +261,7 @@ body {
 /* Responsive */
 @media (max-width: 600px) {
   .gradient-text {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   .section h2 {
     font-size: 1.5rem;
